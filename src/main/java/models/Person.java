@@ -11,7 +11,7 @@ public class Person{
     Long id;
 
     String name;
-
+    String phone;
     public String getName() {
         return name;
     }
