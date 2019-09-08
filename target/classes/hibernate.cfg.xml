@@ -8,8 +8,16 @@
         <property name="hibernate.connection.username">L8n0kZbcW5</property>
         <property name="hibernate.connection.password">Ery9VpiRDp</property>
         <property name="show_sql">true</property>
-        <property name="hbm2ddl.auto">create-drop</property>
+        <property name="hbm2ddl.auto">update</property>
 
+        <mapping class="models.Author"/>
+        <mapping class="models.Book"/>
+        <mapping class="models.Genre"/>
+        <mapping class="models.Loan"/>
+        <mapping class="models.LoanStatus"/>
         <mapping class="models.Person"/>
+        <mapping class="models.PersonStatus"/>
+        <mapping class="models.PersonType"/>
+
     </session-factory>
 </hibernate-configuration>

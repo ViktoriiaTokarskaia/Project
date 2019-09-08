@@ -1,32 +1,32 @@
 package models;
 
+import lombok.Data;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.CascadeType;
+
 
 @Entity
+@Data
 public class Person{
     @Id
     @GeneratedValue
     Long id;
 
-    String name;
+    String firstName;
+    String lastName;
+    String email;
+    String password;
 
-    public java.lang.Long getId() {
-        return id;
-    }
+    @OneToOne(cascade = CascadeType.ALL)
+    PersonType personType;
 
-    public void setId(java.lang.Long id) {
-        this.id = id;
-    }
+    @OneToOne(cascade = CascadeType.ALL)
+    PersonStatus personStatus;
 
-    public java.lang.String getName() {
-        return name;
-    }
-
-    public void setName(java.lang.String name) {
-        this.name = name;
-    }
 }
 
 
