@@ -2,30 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dfa4f863-4f7c-49e0-baf3-8524cedcf45d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/AuthorDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Project.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/Hibernate4Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Hibernate4Util.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Application.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/Project.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/log4j.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/models/Author.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/models/Author.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/models/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/models/Book.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/models/Genre.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/models/Genre.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/models/Loan.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/models/Loan.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/models/LoanStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/models/LoanStatus.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/models/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/models/Person.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/models/PersonStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/models/PersonStatus.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/models/PersonType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/models/PersonType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/utils/Hibernate4Util.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/utils/Hibernate4Util.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -123,7 +102,7 @@
       <option name="presentableId" value="Default" />
       <updated>1567927437273</updated>
       <workItem from="1568823518635" duration="2562000" />
-      <workItem from="1568826204771" duration="2955000" />
+      <workItem from="1568826204771" duration="3217000" />
     </task>
     <servers />
   </component>
