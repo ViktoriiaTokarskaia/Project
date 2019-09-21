@@ -2,9 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dfa4f863-4f7c-49e0-baf3-8524cedcf45d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Application1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/BookDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/GenreDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/LoanDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/LoanStatusDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/PersonDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/PersonStatusDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/PersonTypeDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/DataGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/AuthorDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/AuthorDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/Author.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Author.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/Genre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Genre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/Loan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Loan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/LoanStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/LoanStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/PersonStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/PersonStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/PersonType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/PersonType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Application.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/AuthorDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/AuthorDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/models/Author.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/models/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/models/Book.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/models/Genre.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/models/Genre.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/models/Loan.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/models/Loan.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/models/LoanStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/models/LoanStatus.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/models/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/models/Person.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/models/PersonStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/models/PersonStatus.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/models/PersonType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/models/PersonType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/utils/Hibernate4Util.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/utils/Hibernate4Util.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,7 +79,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="C:/VinodNewestProjectVersion/Project" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -77,9 +108,16 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Application">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Application" />
+      <module name="Project" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Application1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Application1" />
       <module name="Project" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -88,6 +126,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Application" />
+        <item itemvalue="Application.Application1" />
       </list>
     </recent_temporary>
   </component>
@@ -121,5 +160,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Application.java</url>
+          <line>5</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

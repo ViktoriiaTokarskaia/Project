@@ -4,22 +4,22 @@ package models;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
 public class Book {
     @Id
-    @GeneratedValue
-    Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    String title;
+    private String title;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    Author author;
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Author> authors;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    Genre genre;
-
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Genre> genres;
 
 
 }

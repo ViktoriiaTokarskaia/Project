@@ -1,6 +1,6 @@
 package dao;
-
 import models.Author;
+import models.Genre;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
@@ -9,55 +9,56 @@ import utils.Hibernate4Util;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AuthorDao {
-    public Author saveAuthor(Author author) {
+public class GenreDao {
+    public Genre saveGenre(Genre genre) {
         Transaction transaction = null;
         try (Session session = Hibernate4Util.getSessionFactory().openSession()) {
             // start a transaction
             transaction = session.beginTransaction();
-            long id = (Long) session.save(author);
+            long id = (Long) session.save(genre);
             // commit transaction
             transaction.commit();
-            author = getAuthorById(id);
+            genre = getGenreById(id);
         } catch (Exception e) {
 /*            if (transaction != null) {
                 transaction.rollback();
             }*/
             e.printStackTrace();
         }
-
-        return author;
+        return genre;
     }
-    public List<Author> getAuthors() {
+
+
+    public List<Genre> getGenres() {
         try (Session session = Hibernate4Util.getSessionFactory().openSession()) {
-            return session.createQuery("from Author", Author.class).list();
+            return session.createQuery("from Genre", Genre.class).list();
         }
     }
 
-    public Author getAuthorByName(String name) {
+    public Genre getGenreByName(String name) {
         try (Session session = Hibernate4Util.getSessionFactory().openSession()) {
-            Query<Author> query = session.createQuery("From Author where name= :name", Author.class);
+            Query<Genre> query = session.createQuery("From Genre where name= :name", Genre.class);
             query.setParameter("name", name);
-            List authors = query.list();
-            return authors.size() > 0 ? query.list().get(0) : null;
+            List genres = query.list();
+            return genres.size() > 0 ? query.list().get(0) : null;
         }
     }
 
-    public Author getAuthorById(Long id) {
+    public Genre getGenreById(Long id) {
         try (Session session = Hibernate4Util.getSessionFactory().openSession()) {
-            Query<Author> query = session.createQuery("From Author where id= :id", Author.class);
+            Query<Genre> query = session.createQuery("From Genre where id= :id", Genre.class);
             query.setParameter("id", id);
-            List authors = query.list();
-            return authors.size() > 0 ? query.list().get(0) : null;
+            List genres = query.list();
+            return genres.size() > 0 ? query.list().get(0) : null;
         }
     }
 
-    public List<Author> saveBulkAuthors(List<Author> authors) {
-        List<Author> result = new ArrayList<>();
-        for(Author a: authors){
-            Author tempAuthor = getAuthorByName(a.getName());
-            if(tempAuthor == null) {
-                result.add(saveAuthor(a));
+    public List<Genre> saveBulkGenres(List<Genre> genres) {
+        List<Genre> result = new ArrayList<>();
+        for(Genre a: genres){
+            Genre tempGenre = getGenreByName(a.getName());
+            if(tempGenre == null) {
+                result.add(saveGenre(a));
             }
             else{
                 result.add(a);

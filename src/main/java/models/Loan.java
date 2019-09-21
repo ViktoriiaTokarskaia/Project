@@ -11,23 +11,22 @@ import java.util.Date;
 public class Loan {
     @Id
     @GeneratedValue
-    Long id;
+    private Long id;
 
     @OneToOne(cascade = CascadeType.ALL)
-    Person person;
+    private Person person;
 
     @OneToOne(cascade = CascadeType.ALL)
-    Book book;
+    private Book book;
 
     @Temporal(TemporalType.DATE)
-    Date createdDate;
+    private Date createdDate;
 
     @Temporal(TemporalType.DATE)
-    Date updateDate;
+    private Date updateDate;
 
     @OneToOne(cascade = CascadeType.ALL)
-    LoanStatus loanStatus;
-
+    private LoanStatus loanStatus;
 
 
 }

@@ -9,20 +9,19 @@ import javax.persistence.*;
 @Data
 public class Person{
     @Id
-    @GeneratedValue
-    Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    String firstName;
-    String lastName;
-    String email;
-    String password;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    PersonType personType;
+    private String firstName;
+    private String lastName;
+    private String email;
+    private String password;
 
     @OneToOne(cascade = CascadeType.ALL)
-    PersonStatus personStatus;
+    private PersonType personType;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    private PersonStatus personStatus;
 }
 
 

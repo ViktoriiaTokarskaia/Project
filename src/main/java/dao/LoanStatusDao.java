@@ -1,6 +1,9 @@
 package dao;
 
+
 import models.Author;
+import models.Loan;
+import models.LoanStatus;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
@@ -9,55 +12,58 @@ import utils.Hibernate4Util;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AuthorDao {
-    public Author saveAuthor(Author author) {
+public class LoanStatusDao {
+    public LoanStatus saveLoanStatus(LoanStatus loanStatus) {
         Transaction transaction = null;
         try (Session session = Hibernate4Util.getSessionFactory().openSession()) {
+
             // start a transaction
             transaction = session.beginTransaction();
-            long id = (Long) session.save(author);
+            long id = (Long) session.save(loanStatus);
+
             // commit transaction
             transaction.commit();
-            author = getAuthorById(id);
+            loanStatus = getLoanStatusByid(id);
         } catch (Exception e) {
-/*            if (transaction != null) {
+/*
+if (transaction != null) {
                 transaction.rollback();
             }*/
             e.printStackTrace();
         }
 
-        return author;
+        return loanStatus;
     }
-    public List<Author> getAuthors() {
+    public List<LoanStatus> getLoanStatus() {
         try (Session session = Hibernate4Util.getSessionFactory().openSession()) {
-            return session.createQuery("from Author", Author.class).list();
+            return session.createQuery("from LoanStatus", LoanStatus.class).list();
         }
     }
 
-    public Author getAuthorByName(String name) {
+    public LoanStatus getLoanStatusByName(String name) {
         try (Session session = Hibernate4Util.getSessionFactory().openSession()) {
-            Query<Author> query = session.createQuery("From Author where name= :name", Author.class);
+            Query<LoanStatus> query = session.createQuery("From LoanStatus where name= :name", LoanStatus.class);
             query.setParameter("name", name);
             List authors = query.list();
             return authors.size() > 0 ? query.list().get(0) : null;
         }
     }
 
-    public Author getAuthorById(Long id) {
+    public LoanStatus getLoanStatusByid(Long id) {
         try (Session session = Hibernate4Util.getSessionFactory().openSession()) {
-            Query<Author> query = session.createQuery("From Author where id= :id", Author.class);
+            Query<LoanStatus> query = session.createQuery("From LoanStatus where id= :id", LoanStatus.class);
             query.setParameter("id", id);
-            List authors = query.list();
-            return authors.size() > 0 ? query.list().get(0) : null;
+            List loanStatuses = query.list();
+            return loanStatuses.size() > 0 ? query.list().get(0) : null;
         }
     }
 
-    public List<Author> saveBulkAuthors(List<Author> authors) {
-        List<Author> result = new ArrayList<>();
-        for(Author a: authors){
-            Author tempAuthor = getAuthorByName(a.getName());
-            if(tempAuthor == null) {
-                result.add(saveAuthor(a));
+    public List<LoanStatus> saveBulkLoanStatuses (List<LoanStatus> loanStatuses) {
+        List<LoanStatus> result = new ArrayList<>();
+        for(LoanStatus a: loanStatuses){
+            LoanStatus tempLoanStatus = getLoanStatusByid(a.getId());
+            if(tempLoanStatus == null) {
+                result.add(saveLoanStatus(a));
             }
             else{
                 result.add(a);
