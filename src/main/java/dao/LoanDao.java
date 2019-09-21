@@ -1,17 +1,34 @@
 package dao;
 
-import models.Author;
-import models.Loan;
-import models.Person;
+import models.*;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import utils.Hibernate4Util;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class LoanDao {
+
+    public Loan createLoan(Book book, Person person) {
+        Loan loan = new Loan();
+        loan.setBook(book);
+        loan.setPerson(person);
+        loan.setLoanStatus(LoanStatus.ACTIVE);
+        loan.setCreatedDate(new Date());
+
+        return saveLoan(loan);
+    }
+
+    public void returnBook(Loan loan) {
+        loan.setLoanStatus(LoanStatus.RETURNED);
+        loan.setUpdateDate(new Date());
+        updateLoan(loan);
+
+    }
+
     public Loan saveLoan(Loan loan) {
         Transaction transaction = null;
         try (Session session = Hibernate4Util.getSessionFactory().openSession()) {
@@ -25,6 +42,20 @@ public class LoanDao {
 /*            if (transaction != null) {
                 transaction.rollback();
             }*/
+            e.printStackTrace();
+        }
+
+        return loan;
+    }
+
+    public Loan updateLoan(Loan loan) {
+        Transaction transaction = null;
+        try (Session session = Hibernate4Util.getSessionFactory().openSession()) {
+            transaction = session.beginTransaction();
+            session.update(loan);
+            transaction.commit();
+
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
@@ -45,7 +76,7 @@ public class LoanDao {
         }
     }
 
-    public Loan getLoanByid(Long id) {
+    public Loan getLoanById(Long id) {
         try (Session session = Hibernate4Util.getSessionFactory().openSession()) {
             Query<Loan> query = session.createQuery("From Loan where id= :id", Loan.class);
             query.setParameter("id", id);
@@ -58,7 +89,7 @@ public class LoanDao {
     public List<Loan> saveBulkLoans(List<Loan> loans) {
         List<Loan> result = new ArrayList<>();
         for(Loan a: loans){
-            Loan tempLoan = getLoanByid(a.getId());
+            Loan tempLoan = getLoanById(a.getId());
             if(tempLoan == null) {
                 result.add(saveLoan(a));
             }

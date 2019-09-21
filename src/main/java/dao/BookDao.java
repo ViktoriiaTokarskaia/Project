@@ -43,6 +43,15 @@ public class BookDao {
         }
     }
 
+    public Book getBookByID(Long id) {
+        try (Session session = Hibernate4Util.getSessionFactory().openSession()) {
+            Query<Book> query = session.createQuery("From Book where = :id", Book.class);
+            query.setParameter("id", id);
+            List books = query.list();
+            return books.size() > 0 ? query.list().get(0) : null;
+        }
+    }
+
     public void saveBulkBooks(List<Book> books) {
         for(Book a: books){
             saveBook(a);
