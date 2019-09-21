@@ -2,24 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dfa4f863-4f7c-49e0-baf3-8524cedcf45d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/target/classes/Application.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/models/Person.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/BookDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/BookDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/LoanDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/LoanDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Application.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/AuthorDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/BookDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/GenreDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/LoanDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/models/Author.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/models/Book.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/models/Genre.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/models/Loan.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/models/LoanStatus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/models/Person.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/models/PersonStatus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/models/PersonType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/utils/DataGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/utils/Hibernate4Util.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,7 +17,8 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DefaultGradleProjectSettings">
-    <option name="isMigrated" value="true" />
+    <option name="testRunner" value="GRADLE" />
+    <option name="delegatedBuild" value="true" />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="Project" />
@@ -65,7 +55,6 @@
     <property name="last_opened_file_path" value="C:/VinodNewestProjectVersion/Project" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -126,7 +115,7 @@
       <updated>1567927437273</updated>
       <workItem from="1568823518635" duration="2562000" />
       <workItem from="1568826204771" duration="3217000" />
-      <workItem from="1569070410041" duration="520000" />
+      <workItem from="1569072123917" duration="520000" />
     </task>
     <servers />
   </component>
@@ -145,27 +134,13 @@
         </entry>
       </map>
     </option>
-    <option name="RECENT_FILTERS">
-      <map>
-        <entry key="Branch">
-          <value>
-            <list />
-          </value>
-        </entry>
-        <entry key="User">
-          <value>
-            <list />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Application.java</url>
-          <line>5</line>
+          <line>6</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
