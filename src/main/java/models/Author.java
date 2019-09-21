@@ -9,7 +9,7 @@ import javax.persistence.Id;
 
 @Entity
 @Data
-public class Author extends LoanStatus {
+public class Author  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
