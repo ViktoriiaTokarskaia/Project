@@ -1,30 +1,33 @@
 import dao.BookDao;
 import dao.LoanDao;
 import models.*;
-import service.ValidationService;
 import utils.DataGenerator;
+
 
 import java.util.List;
 import java.util.Scanner;
 
 
 public class Application {
-    private static boolean isAuthenticated = false;
-
     public static void main(String[] args) {
         System.out.println("Welcome to Library");
         System.out.println("Starting Data generation");
         DataGenerator dataGenerator = new DataGenerator();
         dataGenerator.generateBooks();
 
-        do {
-            Application.login();
-        } while (!isAuthenticated);
 
         Person person = new Person();
-        if (person.getPersonType() == null) {
-            displayLoanOptions(person);
-        }
+//        if(person.getPersonType() == PersonType.ADMIN) {
+//            System.out.println("Choose one of the option below: ");
+//            System.out.println("1. List of my Loans \\n 2. Loan book \\n 3.Return book \\n 4.Exit");
+//        }
+
+
+      if(person.getPersonType() == null) {
+
+
+          displayLoanOptions(person);
+      }
 
     }
 
@@ -96,23 +99,10 @@ public class Application {
                 break;
 
 
+
+
+
         }
 
-    }
-
-    private static void login() {
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Enter username:");
-        String email = scan.nextLine();
-        System.out.println("Enter password:");
-        String password = scan.nextLine();
-
-        ValidationService validationService = new ValidationService();
-        if (!validationService.checkLogin(password, email)) {
-            System.out.println("User doesn't exists, Enter the correct email:");
-
-        } else {
-            isAuthenticated = true;
-        }
     }
 }
