@@ -3,7 +3,6 @@ import dao.PersonDao;
 import models.*;
 import service.ValidationService;
 import dao.LoanDao;
-import models.*;
 import utils.DataGenerator;
 
 
@@ -22,7 +21,7 @@ public class Application {
         dataGenerator.generateBooks();
         Person person = new Person();
         do {
-            login();
+            person = login();
         } while (!isAuthenticated);
 
         if(isAuthenticated) {
@@ -36,7 +35,7 @@ public class Application {
 
     }
 
-    private static void login() {
+    private static Person login() {
         Scanner scan = new Scanner(System.in);
         System.out.println("Enter username:");
         String email = scan.nextLine();
@@ -44,7 +43,8 @@ public class Application {
         String password = scan.nextLine();
 
         ValidationService validationService = new ValidationService();
-        if (!validationService.checkLogin(password, email)) {
+        Person person = validationService.checkLogin(email, password);
+        if (person == null) {
             System.out.println("User not found or invalid credentials.");
             System.out.println("Choose the option 1. Relogin 2. Register");
             int option = Integer.parseInt(scan.nextLine());
@@ -61,7 +61,7 @@ public class Application {
         } else {
             isAuthenticated = true;
         }
-
+        return person;
     }
 
     private static void registration() {

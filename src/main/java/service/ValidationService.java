@@ -5,20 +5,18 @@ import models.Person;
 
 public class ValidationService {
 
-    public boolean checkLogin(String email, String password){
-
-        boolean result = true;
+    public Person checkLogin(String email, String password){
 
         if(!email.contains("@")){
-            return false;
+            return null;
         }
 
         PersonDao personDao = new PersonDao();
-        Person person = personDao.getPersonByEmail(email);
+        Person person = personDao.getPersonByEmailAndPassword(email,password);
         if(person == null){
-            return false;
+            return person;
         }
+        return null;
 
-        return result;
     }
 }
