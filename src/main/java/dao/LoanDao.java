@@ -2,6 +2,7 @@ package dao;
 
 import models.Author;
 import models.Loan;
+import models.Person;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
@@ -19,7 +20,7 @@ public class LoanDao {
             long id = (Long) session.save(loan);
             // commit transaction
             transaction.commit();
-            loan = getLoanbyBook(id);
+
         } catch (Exception e) {
 /*            if (transaction != null) {
                 transaction.rollback();
@@ -36,6 +37,14 @@ public class LoanDao {
         }
     }
 
+    public List<Loan> getLoansByPerson(Person person) {
+        try (Session session = Hibernate4Util.getSessionFactory().openSession()) {
+            Query<Loan> query = session.createQuery("From Loan where person= :person", Loan.class);
+            query.setParameter("person", person);
+            return query.list();
+        }
+    }
+
     public Loan getLoanByid(Long id) {
         try (Session session = Hibernate4Util.getSessionFactory().openSession()) {
             Query<Loan> query = session.createQuery("From Loan where id= :id", Loan.class);
@@ -45,14 +54,6 @@ public class LoanDao {
         }
     }
 
-    public Loan getLoanbyBook(Long id) {
-        try (Session session = Hibernate4Util.getSessionFactory().openSession()) {
-            Query<Loan> query = session.createQuery("From Loan where id= :id", Loan.class);
-            query.setParameter("id", id);
-            List loans = query.list();
-            return loans.size() > 0 ? query.list().get(0) : null;
-        }
-    }
 
     public List<Loan> saveBulkLoans(List<Loan> loans) {
         List<Loan> result = new ArrayList<>();
