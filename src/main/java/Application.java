@@ -4,12 +4,9 @@ import models.*;
 import service.ValidationService;
 import dao.LoanDao;
 import utils.DataGenerator;
-
-
 import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Level;
-
 
 public class Application {
     private static boolean isAuthenticated = false;
@@ -19,6 +16,7 @@ public class Application {
         org.jboss.logging.Logger logger = org.jboss.logging.Logger.getLogger("org.hibernate");
         java.util.logging.Logger.getLogger("org.hibernate").setLevel(java.util.logging.Level.WARNING);
 
+        //TODO: Make some interactive design. Example: https://miro.medium.com/max/2912/1*8jHmQ7RRxLwH6aXCO4ssAg.png
         System.out.println("Welcome to Library");
         java.util.logging.Logger.getLogger("org.hibernate").setLevel(Level.OFF);
         DataGenerator dataGenerator = new DataGenerator();
@@ -52,7 +50,7 @@ public class Application {
         if (person == null) {
             System.out.println("User not found or invalid credentials.");
             System.out.println("Choose the option:\n1. Re-login\n2. Register");
-            int option = Integer.parseInt(scan.nextLine());
+            int option = Integer.parseInt(scan.nextLine().trim());
 
             switch(option){
                 case 1:
@@ -84,7 +82,7 @@ public class Application {
         String password = scan.nextLine();
         //TODO: Retype password and have password validation
         System.out.println("Choose your type:\n1. " + PersonType.USER + "\n2. " + PersonType.ADMIN);
-        PersonType personType = Integer.parseInt(scan.nextLine()) == 1 ? PersonType.USER :PersonType.ADMIN;
+        PersonType personType = Integer.parseInt(scan.nextLine().trim()) == 1 ? PersonType.USER :PersonType.ADMIN;
 
         Person person = new Person();
         person.setFirstName(firstName);
@@ -104,7 +102,7 @@ public class Application {
         System.out.println("1. List of my Loans\n2. Loan book\n3. Return book\n4. Exit");
         Scanner scanner = new Scanner(System.in);
 
-        int option = Integer.parseInt(scanner.nextLine());
+        int option = Integer.parseInt(scanner.nextLine().trim());
         LoanDao loanDao = new LoanDao();
 
         switch (option) {
@@ -130,7 +128,7 @@ public class Application {
                     System.out.println(book.getId() + ". " + book.getTitle());
                 }
                 System.out.println("Choose 1 book from the above list and enter the Book ID:");
-                Long bookId = Long.parseLong(scanner.nextLine());
+                Long bookId = Long.parseLong(scanner.nextLine().trim());
                 Book book = bookDao.getBookByID(bookId);
                 Loan loan = loanDao.createLoan(book, person);
                 System.out.println("Loan created successfully. Here are the loan details:");
@@ -152,7 +150,7 @@ public class Application {
                 }
 
                 System.out.println("Choose 1 loan to return and enter the Loan ID");
-                Long loanId = Long.parseLong(scanner.nextLine());
+                Long loanId = Long.parseLong(scanner.nextLine().trim());
                 Loan loan2 = loanDao.getLoanById(loanId);
                 //TODO: Ask user if the book is DAMAGED/LOST, if yes set LoanStatus accordingly
                 loanDao.returnBook(loan2);
