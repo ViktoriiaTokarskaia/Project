@@ -1,4 +1,5 @@
 import dao.BookDao;
+import models.*;
 import models.Author;
 import models.Book;
 import models.Genre;
