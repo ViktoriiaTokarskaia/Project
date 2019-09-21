@@ -1,6 +1,5 @@
 package models;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -17,7 +16,11 @@ public class Person{
     private String lastName;
     private String email;
     private String password;
+
+    @Enumerated(EnumType.STRING)
     private PersonType personType;
+
+    @Enumerated(EnumType.STRING)
     private PersonStatus personStatus;
 }
 

@@ -1,6 +1,9 @@
 package dao;
 
-import models.*;
+import models.Book;
+import models.Loan;
+import models.LoanStatus;
+import models.Person;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
@@ -18,33 +21,27 @@ public class LoanDao {
         loan.setPerson(person);
         loan.setLoanStatus(LoanStatus.ACTIVE);
         loan.setCreatedDate(new Date());
-
+        loan.setReturnDate(new Date());  //TODO: Add +14 days
         return saveLoan(loan);
     }
 
     public void returnBook(Loan loan) {
-        loan.setLoanStatus(LoanStatus.RETURNED);
+
+        loan.setLoanStatus(LoanStatus.RETURNED); //TODO: Loan status DAMAGED/LOST/RETURNED
         loan.setUpdateDate(new Date());
         updateLoan(loan);
-
     }
 
     public Loan saveLoan(Loan loan) {
         Transaction transaction = null;
         try (Session session = Hibernate4Util.getSessionFactory().openSession()) {
-            // start a transaction
             transaction = session.beginTransaction();
             long id = (Long) session.save(loan);
-            // commit transaction
             transaction.commit();
-
+            loan = getLoanById(id);
         } catch (Exception e) {
-/*            if (transaction != null) {
-                transaction.rollback();
-            }*/
             e.printStackTrace();
         }
-
         return loan;
     }
 
@@ -54,7 +51,6 @@ public class LoanDao {
             transaction = session.beginTransaction();
             session.update(loan);
             transaction.commit();
-
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -62,16 +58,16 @@ public class LoanDao {
         return loan;
     }
 
-    public List<Loan> getLoans() {
+    public List<Loan> getAllLoans() {
         try (Session session = Hibernate4Util.getSessionFactory().openSession()) {
             return session.createQuery("from Loan", Loan.class).list();
         }
     }
 
-    public List<Loan> getLoansByPerson(Person person) {
+    public List<Loan> getLoansByPersonId(Long personId) {
         try (Session session = Hibernate4Util.getSessionFactory().openSession()) {
-            Query<Loan> query = session.createQuery("From Loan where person= :person", Loan.class);
-            query.setParameter("person", person);
+            Query<Loan> query = session.createQuery("From Loan where person_id= :id", Loan.class);
+            query.setParameter("id", personId);
             return query.list();
         }
     }
@@ -85,7 +81,6 @@ public class LoanDao {
         }
     }
 
-
     public List<Loan> saveBulkLoans(List<Loan> loans) {
         List<Loan> result = new ArrayList<>();
         for(Loan a: loans){
@@ -96,7 +91,6 @@ public class LoanDao {
             else{
                 result.add(a);
             }
-
         }
         return result;
     }

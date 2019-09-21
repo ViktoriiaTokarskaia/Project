@@ -28,7 +28,7 @@ public class BookDao {
         }
 
     }
-    public List<Book> getBooks() {
+    public List<Book> getAllBooks() {
         try (Session session = Hibernate4Util.getSessionFactory().openSession()) {
             return session.createQuery("from Book", Book.class).list();
         }
@@ -45,7 +45,7 @@ public class BookDao {
 
     public Book getBookByID(Long id) {
         try (Session session = Hibernate4Util.getSessionFactory().openSession()) {
-            Query<Book> query = session.createQuery("From Book where = :id", Book.class);
+            Query<Book> query = session.createQuery("From Book where id= :id", Book.class);
             query.setParameter("id", id);
             List books = query.list();
             return books.size() > 0 ? query.list().get(0) : null;

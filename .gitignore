@@ -1,2 +1,10 @@
+# IntelliJ
+*.iml
+.idea
 
-.idea/workspace.xml
+.DS_Store
+
+target/
+runtime/
+out/
+gen/

@@ -11,8 +11,6 @@ import java.util.List;
 public class DataGenerator {
 
     public void generateBooks() {
-        System.out.println("Generating books");
-
         List<Author> authorList = new ArrayList<>();
         List<Genre> genreList = new ArrayList<>();
         List<Book> bookList = new ArrayList<>();
