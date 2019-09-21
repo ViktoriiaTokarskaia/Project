@@ -1,6 +1,12 @@
 import dao.BookDao;
 import dao.LoanDao;
 import models.*;
+import models.Author;
+import models.Book;
+import models.Genre;
+import service.ValidationService;
+import models.Person;
+import models.*;
 import utils.DataGenerator;
 
 
@@ -17,15 +23,19 @@ public class Application {
 
 
         Person person = new Person();
-//        if(person.getPersonType() == PersonType.ADMIN) {
-//            System.out.println("Choose one of the option below: ");
-//            System.out.println("1. List of my Loans \\n 2. Loan book \\n 3.Return book \\n 4.Exit");
-//        }
 
+        do {
+            Application.login();
+        } while (!isAuthenticated);
+
+        if (isAuthenticated && person.getPersonType() == PersonType.ADMIN) {
+            System.out.println("Choose one of the option below: ");
+            System.out.println("1. Show persons list ");
+            System.out.println("2. Update persons info");
+            System.out.println("3. Remove person ");
+        }
 
       if(person.getPersonType() == null) {
-
-
           displayLoanOptions(person);
       }
 
@@ -52,7 +62,6 @@ public class Application {
 
                 displayLoanOptions(person);
                 break;
-
             case 2:
                 BookDao bookDao = new BookDao();
                 List<Book> bookList = bookDao.getBooks();
@@ -67,8 +76,14 @@ public class Application {
                 System.out.println("Created Date:" + loan.getCreatedDate());
                 displayLoanOptions(person);
                 break;
+            ValidationService validationService = new ValidationService();
+            if (!validationService.checkLogin(password, email)) {
+                System.out.println("User doesn't exists, Enter the correct email:");
 
             case 3:
+            } else {
+                isAuthenticated = true;
+            }
 
                 List<Loan> loanList1 = loanDao.getLoansByPerson(person);
                 System.out.println("LIST OF LOANS:");
@@ -89,6 +104,7 @@ public class Application {
 
             case 4:
                 System.out.println("Thank you for choosing our library");
+        }
 
 
                 break;
@@ -105,4 +121,5 @@ public class Application {
         }
 
     }
+}
 }
