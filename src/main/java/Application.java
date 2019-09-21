@@ -13,12 +13,17 @@ import java.util.Scanner;
 
 
 public class Application {
+    private static boolean isAuthenticated = false;
+
     public static void main(String[] args) {
         System.out.println("Welcome to Library");
         System.out.println("Starting Data generation");
         DataGenerator dataGenerator = new DataGenerator();
         dataGenerator.generateBooks();
 
+        do{
+            Application.login();
+        }while(!isAuthenticated);
 
         Scanner scan = new Scanner(System.in);
         System.out.println("Enter username:");
@@ -27,18 +32,35 @@ public class Application {
         String password= scan.nextLine();
 
         ValidationService validationService = new ValidationService();
-        if(!validationService.checkEmail(email)){
+        if(!validationService.checkLogin(password, email)){
             System.out.println("User doesn't exists, Enter the correct email:");
             email= scan.nextLine();
 
 
         }
 
-
-
         String pass = scan.nextLine(); // looks at selected file in scan
+
+    }
+
+    private static void login() {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter username:");
+        String email= scan.nextLine();
+        System.out.println("Enter password:");
+        String password= scan.nextLine();
+
+        ValidationService validationService = new ValidationService();
+        if(!validationService.checkLogin(password, email)) {
+            System.out.println("User doesn't exists, Enter the correct email:");
+
+        }else {
+            isAuthenticated = true;
+        }
 
 
     }
+
+
 
     }
