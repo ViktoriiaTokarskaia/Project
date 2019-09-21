@@ -2,32 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dfa4f863-4f7c-49e0-baf3-8524cedcf45d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Application1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/BookDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/GenreDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/LoanDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/LoanStatusDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/PersonDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/PersonStatusDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/PersonTypeDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/DataGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/service/ValidationService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/AuthorDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/AuthorDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/Author.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Author.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/Genre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Genre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/Loan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Loan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/LoanStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/LoanStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/PersonStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/PersonStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/PersonType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/PersonType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Application.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/PersonDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/PersonDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Application.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/dao/AuthorDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/AuthorDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/models/Author.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/BookDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/BookDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/GenreDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/GenreDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/LoanDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/LoanDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/LoanStatusDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/LoanStatusDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/PersonDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/PersonDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/models/Author.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/models/Author.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/models/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/models/Book.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/models/Genre.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/models/Genre.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/models/Loan.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/models/Loan.class" afterDir="false" />
@@ -35,7 +21,6 @@
       <change beforePath="$PROJECT_DIR$/target/classes/models/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/models/Person.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/models/PersonStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/models/PersonStatus.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/models/PersonType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/models/PersonType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/utils/Hibernate4Util.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/utils/Hibernate4Util.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -166,7 +151,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Application.java</url>
-          <line>5</line>
+          <line>6</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
