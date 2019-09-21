@@ -16,11 +16,7 @@ public class Person{
     private String lastName;
     private String email;
     private String password;
-
-    @OneToOne(cascade = CascadeType.ALL)
     private PersonType personType;
-
-    @OneToOne(cascade = CascadeType.ALL)
     private PersonStatus personStatus;
 }
 
