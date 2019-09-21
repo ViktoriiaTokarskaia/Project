@@ -41,7 +41,7 @@ public class LoanDao {
             Query<Loan> query = session.createQuery("From Loan where id= :id", Loan.class);
             query.setParameter("id", id);
             List loans = query.list();
-            return () > 0 ? query.list().get(0) : null;
+            return loans.size() > 0 ? query.list().get(0) : null;
         }
     }
 

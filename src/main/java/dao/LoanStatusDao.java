@@ -25,10 +25,7 @@ public class LoanStatusDao {
             transaction.commit();
             loanStatus = getLoanStatusByid(id);
         } catch (Exception e) {
-/*
-if (transaction != null) {
-                transaction.rollback();
-            }*/
+
             e.printStackTrace();
         }
 
@@ -58,18 +55,5 @@ if (transaction != null) {
         }
     }
 
-    public List<LoanStatus> saveBulkLoanStatuses (List<LoanStatus> loanStatuses) {
-        List<LoanStatus> result = new ArrayList<>();
-        for(LoanStatus a: loanStatuses){
-            LoanStatus tempLoanStatus = getLoanStatusByid(a.getId());
-            if(tempLoanStatus == null) {
-                result.add(saveLoanStatus(a));
-            }
-            else{
-                result.add(a);
-            }
 
-        }
-        return result;
-    }
 }
