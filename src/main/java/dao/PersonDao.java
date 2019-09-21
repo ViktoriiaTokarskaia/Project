@@ -12,6 +12,43 @@ import java.util.List;
 
 public class PersonDao {
 
+    public Person ModifyPerson (Person person) {
+        Transaction transaction = null;
+        try (Session session = Hibernate4Util.getSessionFactory().openSession()) {
+            // start a transaction
+            transaction = session.beginTransaction();
+            session.update(person);
+            // commit transaction
+            transaction.commit();
+        } catch (Exception e) {
+/*            if (transaction != null) {
+                transaction.rollback();
+            }*/
+            e.printStackTrace();
+        }
+
+        return person;
+    }
+
+
+    public Person DeletePerson (Person person) {
+        Transaction transaction = null;
+        try (Session session = Hibernate4Util.getSessionFactory().openSession()) {
+            // start a transaction
+            transaction = session.beginTransaction();
+            session.remove(person);
+            // commit transaction
+            transaction.commit();
+        } catch (Exception e) {
+/*            if (transaction != null) {
+                transaction.rollback();
+            }*/
+            e.printStackTrace();
+        }
+
+        return person;
+    }
+
         public Person savePerson (Person person) {
             Transaction transaction = null;
             try (Session session = Hibernate4Util.getSessionFactory().openSession()) {
